@@ -23,9 +23,9 @@ const {ActivityTypes,
   //See https://dialogflow.com/docs/reference/v2-auth-setup and
   // https://cloud.google.com/dialogflow/docs/setup for details.
   
-  const projectId = 'cci-servicenow-auto-dispatcher';
-  const appId = '6020d768-ff33-4297-ab58-56f76da195ef';
-  const appPassword = 'dZpYjW-_ko4e--Du2n7-d7Ke80.VxlamaB';
+  const projectId = '<projectID>';
+  const appId = '<appID>';
+  const appPassword = '<apppassword>';
   
   const sessionClient = new dialogflowSessionClient(projectId);
   
@@ -73,7 +73,7 @@ const {ActivityTypes,
   var http = require('http').Server(app2);
   var io = require('socket.io')(http);
   var port2 = 3000;
-  var db = mongojs('mongodb+srv://bsecen:Sm123456$@cluster0.lsone.mongodb.net/titan?retryWrites=true&w=majority',['conversation']);
+  var db = mongojs('mongodb+srv://<userid>:<password>@cluster0.lsone.mongodb.net/<dbname>?retryWrites=true&w=majority',['<collection>']);
 
   const sessionClient2 = new dialogflowSessionClient(projectId);
 
@@ -91,7 +91,7 @@ const {ActivityTypes,
      if (outMes=="Sorry, I'm not trained to help with that. Please provide additional details and I will do my best to provide assistance.")
       {
            //request
-        const Clever = new Cleverbot('CC936KmOCw8j9fHN20hn6ZWw0LA');
+        const Clever = new Cleverbot('<apikey>');
  
         Clever.request(msg).then(function(response) {
         //console.log(response.output);
